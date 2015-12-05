@@ -16,3 +16,5 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext;
 if (window.AudioContext === "undefined") {
   console.error("Do NOT support AudioContext.");
 }
+
+var context = new AudioContext();
