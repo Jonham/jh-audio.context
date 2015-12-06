@@ -6,9 +6,11 @@ req.responseType = 'arraybuffer';
 
 // Decode asynchronously
 req.onload = function() {
-  context.decodeAudioData(req.response, function(theBuffer){
+  audioctx.decodeAudioData(req.response, function(theBuffer){
     buffer = theBuffer;
-  }, onError);
+    window.jh = theBuffer;
+    console.log("jh is set to buffer");
+  }, function(e){console.log('decodeAudioData Error ' + e);});
 };
 req.send();
 }

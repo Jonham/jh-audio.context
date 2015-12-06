@@ -45,8 +45,14 @@ module.exports = function(grunt) {
         tasks: ['jshint:js', 'concat:js']
       },
       web: {
-        files: ['www/**'],
+        files: ['www/**/*.*'],
         tasks: ['connect:server']
+      },
+      live: {
+        files: ['www/**/*.*'],
+        options: {
+          livereload : 9090,
+        }
       }
     }
   });
